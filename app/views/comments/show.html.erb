@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<%= render partial: 'comment', object: @comment %>
+
+<%= link_to 'Post', @comment.post %>
+
+<br/>
+
+<%= link_to 'Edit', edit_post_comment_path(@post,@comment) %> |
+<%= link_to 'Back', post_comments_path(@post) %>
