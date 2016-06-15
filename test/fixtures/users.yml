@@ -1,0 +1,28 @@
+# == Schema Information
+# Schema version: 20160615001402
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  email           :text             not null
+#  name            :text             not null
+#  password_digest :text             not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+# Indexes
+#
+#  index_users_on_email  (email) UNIQUE
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyText
+  name: MyText
+  password_digest: MyText
+
+two:
+  email: MyText
+  name: MyText
+  password_digest: MyText

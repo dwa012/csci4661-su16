@@ -1,5 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<% if flash.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% flash.each do |key, message| %>
+            <li><%= key %>: <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
 <h1>Listing Posts</h1>
 
 <table>

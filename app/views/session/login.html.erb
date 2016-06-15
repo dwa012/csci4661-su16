@@ -1,0 +1,23 @@
+<%= form_tag session_create_path do |form| %>
+    <% if flash.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% flash.each do |key, message| %>
+                <li><%= key %>: <%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= label_tag :email %><br>
+      <%= text_field_tag :email %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :password %><br>
+      <%= password_field_tag :password %>
+    </div>
+
+    <%= submit_tag 'Login' %>
+<% end %>
