@@ -31,4 +31,8 @@ class User < ActiveRecord::Base
   scope :admins, -> { joins(:roles).where(roles: { name: 'admin' }) }
   scope :moderators, -> { joins(:roles).where(roles: { name: 'moderator' }) }
   scope :guests, -> { joins(:roles).where(roles: { name: 'guest' }) }
+
+  def has_role?(role_name)
+    self.roles.where(name: role_name).exists?
+  end
 end

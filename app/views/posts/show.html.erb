@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Author:</strong>
+  <%= @post.user.name %>
+  <%= image_tag avatar_url(@post.user, 200) %>
+</p>
+
+<p>
   <strong>Title:</strong>
   <%= @post.title %>
 </p>

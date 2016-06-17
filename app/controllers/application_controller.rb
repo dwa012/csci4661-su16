@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     User.where(id: session[:user_id]).first
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
   private
 
   def authorize_user
