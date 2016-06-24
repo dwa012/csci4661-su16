@@ -1,0 +1,6 @@
+// if the placeholder is still on screen remove it
+$('#comments-placeholder').remove();
+
+$('form #comment_body').val('');
+
+jQuery('#comments-list').append("<%= escape_javascript render(partial: 'comments/comment', object: @comment) %>");

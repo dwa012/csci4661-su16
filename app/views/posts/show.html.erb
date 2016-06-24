@@ -20,11 +20,13 @@
 
 <h3>Comments</h3>
 
-<% if @post.comments.empty? %>
-   <small>No comments yet</small>
-<% else %>
-  <%= render partial: 'comments/comment', collection: @post.comments %>
-<% end %>
+<div id="comments-list">
+  <% if @post.comments.empty? %>
+   <small id="comments-placeholder">No comments yet</small>
+  <% else %>
+    <%= render partial: 'comments/comment', collection: @post.comments %>
+  <% end %>
+</div>
 
 <br/>
 
