@@ -1,39 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-6">
+    <h1>All Posts</h1>
+  </div>
 
-<% if flash.any? %>
-    <div id="error_explanation">
-      <ul>
-        <% flash.each do |key, message| %>
-            <li><%= key %>: <%= message %></li>
-        <% end %>
-      </ul>
+  <div class="col-md-6">
+    <div class="pull-right">
+      <%= bs_link_to 'New Post', new_post_path %>
     </div>
-<% end %>
+  </div>
+</div>
 
-<h1>Listing Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<br/>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to('Show', post) if can? :read, post  %></td>
-        <td><%= link_to('Edit', edit_post_path(post)) if can? :update, post %></td>
-        <td><%= link_to('Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }) if can? :delete, post   %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="post-list">
+  <% @posts.each do |post| %>
+    <%= render partial: 'posts/show', object: post, locals: { smaller_avatar: true } %>
 
-<br>
+    </br>
+  <% end  %>
+</div>
 
-<%= link_to 'New Post', new_post_path %>
+

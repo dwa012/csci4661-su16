@@ -15,6 +15,9 @@ class Ability
       can :read  , Post
       can :manage, Post, user_id: user.id
 
+      can :create, Comment
+      can :read, Comment
+
     else
       can :read, Post
       can :read, Comment

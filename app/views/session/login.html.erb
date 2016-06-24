@@ -1,23 +1,15 @@
+<h2 class="text-center">Sign In</h2>
+
 <%= form_tag session_create_path do |form| %>
-    <% if flash.any? %>
-        <div id="error_explanation">
-          <ul>
-            <% flash.each do |key, message| %>
-                <li><%= key %>: <%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-
-    <div class="field">
+    <div class="form-group">
       <%= label_tag :email %><br>
-      <%= text_field_tag :email %>
+      <%= text_field_tag :email, nil, class: 'form-control' %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= label_tag :password %><br>
-      <%= password_field_tag :password %>
+      <%= password_field_tag :password, nil, class: 'form-control' %>
     </div>
 
-    <%= submit_tag 'Login' %>
+    <%= submit_tag 'Login', class: 'btn btn-default' %>
 <% end %>

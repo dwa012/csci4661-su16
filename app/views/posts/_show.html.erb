@@ -1,0 +1,44 @@
+<% post = show || @post %>
+
+<div class="row">
+  <div class="col-md-<%= smaller_avatar ? '1' : '2' %>">
+    <div class="row">
+      <div class="col-md-12">
+        <%= image_tag avatar_url(post.user, 200) %>
+      </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= post.user.name %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-<%= smaller_avatar ? '11' : '10' %>">
+
+    <div class="row">
+      <div class="col-md-12">
+        <% if action_name.to_sym == :show  %>
+            <strong><%= post.title %></strong>
+        <% else  %>
+           <%= link_to post.title, post_path(post)  %>
+        <% end  %>
+
+      </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="post-body">
+          <%= post.body %>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
