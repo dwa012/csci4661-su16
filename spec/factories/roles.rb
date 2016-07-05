@@ -9,9 +9,16 @@
 #  updated_at :datetime         not null
 #
 
-class Role < ActiveRecord::Base
-  has_many :user_roles, dependent: :destroy
-  has_many :users, through: :user_roles
+FactoryGirl.define do
+  factory :role do
+    name 'guest'
 
-  validates :name, presence: true
+    trait :admin do
+      name 'admin'
+    end
+
+    trait :moderator do
+      name 'moderator'
+    end
+  end
 end

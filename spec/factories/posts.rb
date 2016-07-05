@@ -19,10 +19,9 @@
 #  fk_rails_5b5ddfd518  (user_id => users.id)
 #
 
-class Post < ActiveRecord::Base
-  has_many :comments
-  belongs_to :user
-
-  validates :title, presence: true
-  validates :body, presence: true
+FactoryGirl.define do
+  factory :post do
+    title FFaker::Lorem.sentence
+    body  FFaker::Lorem.paragraphs.join
+  end
 end

@@ -14,3 +14,6 @@
 
 .idea
 .vagrant
+/.byebug_history
+
+coverage
